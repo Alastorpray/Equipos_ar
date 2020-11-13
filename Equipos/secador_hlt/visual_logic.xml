@@ -1,0 +1,2725 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="init" type="InitTab" active="false" scrollx="539.2457154519215" scrolly="344.20718286346164" scale="1">
+    <block xmlns="https://developers.google.com/blockly/xml" type="initSettings" id="wuBW_o6X)Q2IAz%T7P2P" x="-330" y="-230">
+      <field name="LOAD_COMP_ASSETS">FALSE</field>
+      <field name="FULLSCREEN">TRUE</field>
+      <field name="BKG_TRANSPARENCY">FALSE</field>
+      <field name="PRESERVE_DRAW_BUF">FALSE</field>
+      <field name="FADE_ANNOTATIONS">TRUE</field>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="initPreloader" id="OGgo^JYne/YTZkxdB}%1" x="-430" y="30">
+      <statement name="DO_PROGRESS">
+        <block type="setHTMLElemAttribute" id="*^KW[oH~C1JdrdB{HecC">
+          <field name="ATTRIBUTE">innerHTML</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text_join" id="L=Yq@OV~XIfhIaqU|~oe">
+              <mutation items="2"/>
+              <value name="ADD0">
+                <block type="percentage" id="ynPIm4w)_52M!wA.]~CX"/>
+              </value>
+              <value name="ADD1">
+                <block type="text" id="o@;O/G7wW^MBJg.dI*jM">
+                  <field name="TEXT">%</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="TH{ViYXUnZV?+-s@tfq]">
+              <field name="TEXT">loading_percentage</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_END">
+        <block type="setHTMLElemStyle" id="2*W{s,ZHT?K{#lOR(mbC">
+          <field name="PROPERTY">display</field>
+          <field name="PARENT">TRUE</field>
+          <value name="VALUE">
+            <block type="text" id="R(Q9#k%*XcT,,u)W_|+r">
+              <field name="TEXT">none</field>
+            </block>
+          </value>
+          <value name="ID">
+            <block type="text" id="V*hnL$~HJ-s1hC0hftSg">
+              <field name="TEXT">preloader_screen</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <tab name="main" type="MainTab" active="true" scrollx="-395.06257708721114" scrolly="1626.8129369688222" scale="0.9999999999999997">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="1@t]{Exc7li$-aMN)2n?" type="">id</variable>
+      <variable id="$Bo)%{4+9@:*Ud=cP}/w" type="">estado_proceso</variable>
+      <variable id="EJ3D^Y/gf43F(~F/U=ez" type="">AR_available</variable>
+      <variable id="6ppu,H{1t,s)Kqwrn$vf" type="">animation_counter</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="checkARMode" id="mlMLk*w#s%|5:5~W-e,@" x="690" y="-1730">
+      <comment pinned="false" h="32" w="203">Check AR capabilities</comment>
+      <statement name="DO_AVAIL">
+        <block type="variables_set" id="6a.yhJbfjsIx`kmmz6-I">
+          <field name="VAR" id="EJ3D^Y/gf43F(~F/U=ez">AR_available</field>
+          <value name="VALUE">
+            <block type="logic_boolean" id="PRoE(J3H^1:1$9:6%t8v">
+              <field name="BOOL">TRUE</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <statement name="DO_UNAVAIL">
+        <block type="variables_set" id="W~M5A8lvtn1N;wQ;)duJ">
+          <field name="VAR" id="EJ3D^Y/gf43F(~F/U=ez">AR_available</field>
+          <value name="VALUE">
+            <block type="logic_boolean" id="~KEoZ[]48VR25;Szyz6T">
+              <field name="BOOL">FALSE</field>
+            </block>
+          </value>
+        </block>
+      </statement>
+      <next>
+        <block type="whenClicked" id="NWdw2_3f@C9SA%cG?NfD">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" enableifmissed="false"></mutation>
+          <comment pinned="false" h="36" w="205">Position the character</comment>
+          <value name="VALUE">
+            <block type="objectList" id="0I(.2F*2ueyHI)yvk|OX">
+              <field name="FIELDNAME">indicator_invis_plane</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="show" id="|N?+Tdk/U7Gb,Pd#H@eb">
+              <value name="VALUE">
+                <block type="objectList" id="-deEy1K]_-N:mSj=J/Ns">
+                  <field name="FIELDNAME">base</field>
+                </block>
+              </value>
+              <next>
+                <block type="show" id="tP{Rvgdn2r#A=l/7;D%f">
+                  <value name="VALUE">
+                    <block type="groupList" id="U4DNgu|4pwPdU$1w#fXw">
+                      <field name="FIELDNAME">cambio_fajas</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="show" id="_z[i`1$(fsI7y#E#X|bE">
+                      <value name="VALUE">
+                        <block type="groupList" id="@`Ir/D73opIN[KI(jyj%">
+                          <field name="FIELDNAME">pernos_tornillos</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="show" id="PTT:{g5RV!LayEKR2vxY">
+                          <value name="VALUE">
+                            <block type="groupList" id="kB8MSyW4S{t6IXGnK^YH">
+                              <field name="FIELDNAME">Herramientas</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="show" id="-VX3EQfQ2yC-_7ys+EY%">
+                              <value name="VALUE">
+                                <block type="groupList" id="$+I$U}Oe3TaEp{52l!c}">
+                                  <field name="FIELDNAME">pernos_guarda_a</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="show" id="fHh{3~}W_6)y%,4~Su|w">
+                                  <value name="VALUE">
+                                    <block type="groupList" id="=c?Z]yD(nz;vpn_qs@@y">
+                                      <field name="FIELDNAME">fajas</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="procedures_callnoreturn" id="9}8qwEA|$!c-UGrC[~dR">
+                                      <mutation name="restart-animation"/>
+                                      <next>
+                                        <block type="hide" id=",!ap6fc8((2HS+7jwm%Y">
+                                          <value name="VALUE">
+                                            <block type="groupList" id="RNgyya~VQwVrQp*wX`xx">
+                                              <field name="FIELDNAME">indicator_group</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="hide" id="}iu}m^u51G]986:8jnm+">
+                                              <value name="VALUE">
+                                                <block type="objectList" id="VPK]X*[g!1kso[H=[^4p">
+                                                  <field name="FIELDNAME">indicator_invis_plane</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="setObjTransform" id="{K_[vDp#KLse}*]Eo~bt">
+                                                  <field name="MODE">position</field>
+                                                  <field name="OFFSET">FALSE</field>
+                                                  <value name="TARGETOBJ">
+                                                    <block type="objectList" id="r?m.wD%!.9U4[;(Mq5OD">
+                                                      <field name="FIELDNAME">base</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="X">
+                                                    <block type="arHitPoint" id=";x]CO5?lZAb5{cN4~ld0">
+                                                      <field name="COORD">x</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="Y">
+                                                    <block type="arHitPoint" id="fQH7D0Pg2J_,vdO[mc.n">
+                                                      <field name="COORD">y</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="Z">
+                                                    <block type="math_number" id="q;ulidHE`60-i~Au4F2G">
+                                                      <field name="NUM">-4</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="setObjDirection" id="Fiakuw}?vg-sKiI2:HTS" inline="false">
+                                                      <field name="LOCK_UP">TRUE</field>
+                                                      <comment pinned="false" h="32" w="128">Look atsade!</comment>
+                                                      <value name="TARGETOBJ">
+                                                        <block type="objectList" id="*kX[:;$U(jTCeftUV+w1">
+                                                          <field name="FIELDNAME">base</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="X">
+                                                        <block type="getObjTransform" id="vjyVrj9S#xz$od*_:l?+">
+                                                          <field name="MODE">position</field>
+                                                          <field name="COORD">x</field>
+                                                          <value name="TARGETOBJ">
+                                                            <block type="objectList" id="G98$).Vp1}!iL10].BCa">
+                                                              <field name="FIELDNAME">Camera</field>
+                                                            </block>
+                                                          </value>
+                                                        </block>
+                                                      </value>
+                                                      <value name="Y">
+                                                        <block type="getObjTransform" id=";M*}mgO37U?M=TGa?`b@">
+                                                          <field name="MODE">position</field>
+                                                          <field name="COORD">y</field>
+                                                          <value name="TARGETOBJ">
+                                                            <block type="objectList" id="UO^X+);-@C*cbax*G2N*">
+                                                              <field name="FIELDNAME">Camera</field>
+                                                            </block>
+                                                          </value>
+                                                        </block>
+                                                      </value>
+                                                      <value name="Z">
+                                                        <block type="getObjTransform" id="1mvq9[|M^G[yi3vy3!7x">
+                                                          <field name="MODE">position</field>
+                                                          <field name="COORD">z</field>
+                                                          <value name="TARGETOBJ">
+                                                            <block type="objectList" id="kX^+xE2S~ZI9KCQDd=-B">
+                                                              <field name="FIELDNAME">Camera</field>
+                                                            </block>
+                                                          </value>
+                                                        </block>
+                                                      </value>
+                                                      <next>
+                                                        <block type="setTimeout" id="l4g-yvUY,5Ie{?F7)OYM">
+                                                          <value name="VALUE">
+                                                            <shadow type="math_number" id="JgAL|2t]za53pCnD9K:t">
+                                                              <field name="NUM">5</field>
+                                                            </shadow>
+                                                          </value>
+                                                          <statement name="DO">
+                                                            <block type="controls_if" id="nrWi%3f0@3Ah0p/)j.!!">
+                                                              <mutation elseif="2"/>
+                                                              <value name="IF0">
+                                                                <block type="logic_compare" id="tnp7x*YD=S$MpOH-*?+h">
+                                                                  <field name="OP">EQ</field>
+                                                                  <value name="A">
+                                                                    <block type="variables_get" id="j]@z7dR6z)#hy^WF7jbf">
+                                                                      <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="B">
+                                                                    <block type="math_number" id="K/*H(3;:[Ueo:nC1q/_x">
+                                                                      <field name="NUM">0</field>
+                                                                    </block>
+                                                                  </value>
+                                                                </block>
+                                                              </value>
+                                                              <statement name="DO0">
+                                                                <block type="console.log" id=",=@(/*?j:exh;a54mmg+">
+                                                                  <value name="VALUE">
+                                                                    <shadow type="text" id=".:.VQW~W]AGwqvcHir)%">
+                                                                      <field name="TEXT">No hacer nada</field>
+                                                                    </shadow>
+                                                                  </value>
+                                                                </block>
+                                                              </statement>
+                                                              <value name="IF1">
+                                                                <block type="logic_compare" id="c~([1q4n;{(r|qAxCRfn">
+                                                                  <field name="OP">EQ</field>
+                                                                  <value name="A">
+                                                                    <block type="variables_get" id=";8[-xa!N3.3yYZ7L?z^_">
+                                                                      <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="B">
+                                                                    <block type="math_number" id="B,uq#CDaIb=HJE]8yLic">
+                                                                      <field name="NUM">1</field>
+                                                                    </block>
+                                                                  </value>
+                                                                </block>
+                                                              </value>
+                                                              <statement name="DO1">
+                                                                <block type="controls_if" id="$!GaS;]bJ71kXLg`G@ua">
+                                                                  <value name="IF0">
+                                                                    <block type="logic_compare" id="XoE#bmGs-D!!(/(q-CE?">
+                                                                      <field name="OP">EQ</field>
+                                                                      <value name="A">
+                                                                        <block type="variables_get" id="d.cHiU-JS}lSomT9HP?(">
+                                                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <value name="B">
+                                                                        <block type="math_number" id="LLhYd7knQqsr1bLR._sl">
+                                                                          <field name="NUM">0</field>
+                                                                        </block>
+                                                                      </value>
+                                                                    </block>
+                                                                  </value>
+                                                                  <statement name="DO0">
+                                                                    <block type="procedures_callnoreturn" id="P_Z=M{x:i{g(t5*KrI/{">
+                                                                      <mutation name="pro1-paso1"/>
+                                                                    </block>
+                                                                  </statement>
+                                                                </block>
+                                                              </statement>
+                                                              <value name="IF2">
+                                                                <block type="logic_compare" id="@u#}c{0$tW!_5};I76S4">
+                                                                  <field name="OP">EQ</field>
+                                                                  <value name="A">
+                                                                    <block type="variables_get" id="E[fBf$r_b_W+H2vh#Rdb">
+                                                                      <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="B">
+                                                                    <block type="math_number" id="%_cwBP#RfIOXk0L9|_;7">
+                                                                      <field name="NUM">2</field>
+                                                                    </block>
+                                                                  </value>
+                                                                </block>
+                                                              </value>
+                                                              <statement name="DO2">
+                                                                <block type="controls_if" id="tn=Egt9tY^5e(-wdp!%O">
+                                                                  <value name="IF0">
+                                                                    <block type="logic_compare" id="bz%FX].$|yUWwvm@BiB2">
+                                                                      <field name="OP">EQ</field>
+                                                                      <value name="A">
+                                                                        <block type="variables_get" id="=QFC^fBi$R37[Wf~A[_J">
+                                                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <value name="B">
+                                                                        <block type="math_number" id="BOD{o51K2%#w4b^c]c|Z">
+                                                                          <field name="NUM">0</field>
+                                                                        </block>
+                                                                      </value>
+                                                                    </block>
+                                                                  </value>
+                                                                  <statement name="DO0">
+                                                                    <block type="console.log" id="6nAh-h,s+v5.z,w_.jA?">
+                                                                      <value name="VALUE">
+                                                                        <shadow type="text" id="=YgkI_SThPcd,to}0;KO">
+                                                                          <field name="TEXT">No hacer nada</field>
+                                                                        </shadow>
+                                                                      </value>
+                                                                    </block>
+                                                                  </statement>
+                                                                </block>
+                                                              </statement>
+                                                            </block>
+                                                          </statement>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <next>
+            <block type="eventHTMLElem" id="Is7Y0PF.7L@|~MS%4CT`">
+              <field name="EVENT">click</field>
+              <field name="PARENT">TRUE</field>
+              <value name="ID">
+                <block type="text" id="zsCW}~$mJ+SRh*+U#OFD">
+                  <field name="TEXT">button-ar</field>
+                </block>
+              </value>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_callnoreturn" id="5[l#(glSpyq(4/-@e7=N" x="1570" y="-1650">
+      <mutation name="restart-animation"/>
+      <next>
+        <block type="controls_if" id="MxRnC7LSl+/g5(*~wRKj">
+          <mutation else="1"/>
+          <value name="IF0">
+            <block type="variables_get" id="wxW9/2x8{=puOHhuMC}b">
+              <field name="VAR" id="EJ3D^Y/gf43F(~F/U=ez">AR_available</field>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="enterARMode" id="gguSG-P`_!_][$vH`QdV">
+              <field name="REF_SPACE">ORIGIN</field>
+              <statement name="DO_ENTER">
+                <block type="hide" id="P4YtX+iMymT},)vlN}_C">
+                  <value name="VALUE">
+                    <block type="groupList" id="1yyu$Wk1r6:yk,mk=38P">
+                      <field name="FIELDNAME">secador_hlt</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="hide" id="Y@qv[Ztny]o{c~Ggpy7#">
+                      <value name="VALUE">
+                        <block type="groupList" id="D5j*_Y)3vgz!IM6$zUs(">
+                          <field name="FIELDNAME">pernos_tornillos</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="hide" id="Y+?mS8RStzZLGkLYh$6~">
+                          <value name="VALUE">
+                            <block type="groupList" id="TmK1U%VGWbUrTsjV8:=M">
+                              <field name="FIELDNAME">Herramientas</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="hide" id="?2qv*q[(?,=xEB=Y:H8X">
+                              <value name="VALUE">
+                                <block type="groupList" id="}xdJKx3An~=O78wa,WPv">
+                                  <field name="FIELDNAME">pernos_guarda_a</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="hide" id="e~B*O,2SANK.0`H9w)W?">
+                                  <value name="VALUE">
+                                    <block type="groupList" id="1B0c-k/,9Zt{V8)i=NyC">
+                                      <field name="FIELDNAME">Environment</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="hide" id=":]]~]bYuANB`io5-VxrR">
+                                      <value name="VALUE">
+                                        <block type="groupList" id="#!ms-=]yz39?b4.,%k5-">
+                                          <field name="FIELDNAME">fajas</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="hide" id="[;7`bj5)7/tU~BKi29RF">
+                                          <value name="VALUE">
+                                            <block type="groupList" id="cmp)YkKCqFapG,)%H$},">
+                                              <field name="FIELDNAME">difusor</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="hide" id="qe?T+u4jPOtuCl:9$$51">
+                                              <value name="VALUE">
+                                                <block type="groupList" id="R*?Qm|AG:!0SmY!o6u(z">
+                                                  <field name="FIELDNAME">lonchera</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="hide" id="`$`kS?c5VzB]q1/hJj}V">
+                                                  <value name="VALUE">
+                                                    <block type="groupList" id="OC-?NhZj`Xa5VCA9D9~}">
+                                                      <field name="FIELDNAME">pernos_del_difusor</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="hide" id="jut%$!|z(J_Fe=G:-3#K">
+                                                      <value name="VALUE">
+                                                        <block type="groupList" id="P%`3KY(_G3UG*O]m`fx(">
+                                                          <field name="FIELDNAME">cambio_fajas</field>
+                                                        </block>
+                                                      </value>
+                                                      <next>
+                                                        <block type="hide" id="axXktdkyO7#88GXrq4q0">
+                                                          <value name="VALUE">
+                                                            <block type="groupList" id="F*|R#swK[`8n1`HFivGI">
+                                                              <field name="FIELDNAME">difusor_inservibles</field>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="hide" id="8`A)P8LfS__(Y8cc2j)L">
+                                                              <value name="VALUE">
+                                                                <block type="groupList" id="Z@Q^p;|[K4=I~s~yzsNY">
+                                                                  <field name="FIELDNAME">herramientas_saacke</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="show" id="1%_?=ro@zDvZ?Pd]:F5$">
+                                                                  <value name="VALUE">
+                                                                    <block type="objectList" id="./NciSMt*kWI9[]LilC#">
+                                                                      <field name="FIELDNAME">prompt_move_around</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <next>
+                                                                    <block type="arHitTest" id="aF!JST/GxGmMFJJ{9UDA">
+                                                                      <value name="SMOOTH">
+                                                                        <shadow type="math_number" id="823$QN!UD^105vp|[b/L">
+                                                                          <field name="NUM">0.7</field>
+                                                                        </shadow>
+                                                                      </value>
+                                                                      <statement name="DO_HIT">
+                                                                        <block type="show" id="S4q!0]@Bs03WWSSpIt2N">
+                                                                          <value name="VALUE">
+                                                                            <block type="groupList" id="cDiLSfl;5xzat_c$]g+/">
+                                                                              <field name="FIELDNAME">indicator_group</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <next>
+                                                                            <block type="hide" id="`w+5+tZ~mO7E?bhMaK+@">
+                                                                              <value name="VALUE">
+                                                                                <block type="objectList" id="/p,nD%$C*};CzJn^}%wX">
+                                                                                  <field name="FIELDNAME">prompt_move_around</field>
+                                                                                </block>
+                                                                              </value>
+                                                                              <next>
+                                                                                <block type="setObjTransform" id="#:-!AD.aB6?1iN6{4#CG">
+                                                                                  <field name="MODE">position</field>
+                                                                                  <field name="OFFSET">FALSE</field>
+                                                                                  <value name="TARGETOBJ">
+                                                                                    <block type="objectList" id="hBRK-udqWf9]:JRr/eeR">
+                                                                                      <field name="FIELDNAME">indicator_invis_plane</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <value name="X">
+                                                                                    <block type="arHitPoint" id="?tCsulpvC2Uu(.IOFIeV">
+                                                                                      <field name="COORD">x</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <value name="Y">
+                                                                                    <block type="arHitPoint" id="=u8$450fgI5l(71k$ORo">
+                                                                                      <field name="COORD">y</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <value name="Z">
+                                                                                    <block type="arHitPoint" id="Q`r)o7?U2pm-ou-F(6@%">
+                                                                                      <field name="COORD">z</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                </block>
+                                                                              </next>
+                                                                            </block>
+                                                                          </next>
+                                                                        </block>
+                                                                      </statement>
+                                                                      <statement name="DO_MISS">
+                                                                        <block type="hide" id="wMALFL[7;95^Xn*}atvt">
+                                                                          <value name="VALUE">
+                                                                            <block type="groupList" id="F/XQJ-+2VUlP8K@:(B`9">
+                                                                              <field name="FIELDNAME">indicator_group</field>
+                                                                            </block>
+                                                                          </value>
+                                                                        </block>
+                                                                      </statement>
+                                                                      <next>
+                                                                        <block type="setHTMLElemStyle" id="|TOS9mdSkunq7]c0@*`M">
+                                                                          <field name="PROPERTY">display</field>
+                                                                          <field name="PARENT">FALSE</field>
+                                                                          <comment pinned="false" h="32" w="196">Hide Enter AR button</comment>
+                                                                          <value name="VALUE">
+                                                                            <block type="text" id="iMJ{ht!SUu4+wQgx6R};">
+                                                                              <field name="TEXT">none</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <value name="ID">
+                                                                            <block type="text" id="v)%$h%$^;4gZ~A%is[-g">
+                                                                              <field name="TEXT">enter_AR_button</field>
+                                                                            </block>
+                                                                          </value>
+                                                                        </block>
+                                                                      </next>
+                                                                    </block>
+                                                                  </next>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <statement name="DO_EXIT">
+                <block type="show" id="2/|a=-c?3`~CaY_`~)=`">
+                  <value name="VALUE">
+                    <block type="objectList" id="[OE,vzm_04w{%1ARe3b.">
+                      <field name="FIELDNAME">environment</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="openWebPage" id="SDj;yF-,i4QdRW0zW4I9">
+                      <field name="MODE">SAME</field>
+                      <comment pinned="false" h="32" w="263">Reset by refreshing the page</comment>
+                      <value name="URL">
+                        <shadow xmlns="http://www.w3.org/1999/xhtml" type="text">
+                          <field name="TEXT">https://www.soft8soft.com/</field>
+                        </shadow>
+                        <block type="getUrlData" id="/fBl|7YKuni?)7csR6hp">
+                          <field name="KIND">URL</field>
+                          <field name="PARENT">FALSE</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <statement name="DO_UNAVAIL">
+                <block type="procedures_callnoreturn" id="/o,f;(O|-b;RmS4DQ=0u" inline="true">
+                  <mutation name="show warning">
+                    <arg name="id"/>
+                  </mutation>
+                  <value name="ARG0">
+                    <block type="text" id="nzApO{}l`Ex:ax}HmgHI">
+                      <field name="TEXT">warning_could_not_enter_AR</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+            </block>
+          </statement>
+          <statement name="ELSE">
+            <block type="procedures_callnoreturn" id="GYZ8Lw@s#aC!H[m7~W4I" inline="true">
+              <mutation name="show warning">
+                <arg name="id"/>
+              </mutation>
+              <value name="ARG0">
+                <block type="text" id="Bpl]M,3uiku94ov7yl;j">
+                  <field name="TEXT">warning_AR_unavailable</field>
+                </block>
+              </value>
+            </block>
+          </statement>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="XwPsxcIw311W[k!.`rg." x="-430" y="-770">
+      <field name="NAME">restart-animation</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="hide" id="S$rKo)).O{E+Ge%d;Sxh">
+          <value name="VALUE">
+            <block type="objectList" id="oSoNd*nFj3jH?d`GbHv0">
+              <field name="FIELDNAME">llave_mixta_1</field>
+            </block>
+          </value>
+          <next>
+            <block type="hide" id="EBvhbY%PGD]F]}7B^r?q">
+              <value name="VALUE">
+                <block type="objectList" id=":@{OMQ$~**!3zERuHUO%">
+                  <field name="FIELDNAME">llave_mixta_2</field>
+                </block>
+              </value>
+              <next>
+                <block type="hide" id="`}FVm,1[4)rlblMSmXQj">
+                  <value name="VALUE">
+                    <block type="objectList" id=".WQpVz%$v9EXT##3N{T0">
+                      <field name="FIELDNAME">alineador_laser_bot</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="hide" id=",(G~6tAjFe8M?r-]6]-*">
+                      <value name="VALUE">
+                        <block type="objectList" id="D(/HB4PbSj:S{w{3xQO_">
+                          <field name="FIELDNAME">alineador_laser_top</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_callnoreturn" id="bR;UE{Fto$fu5[+BQ_v$" x="-350" y="-450">
+      <mutation name="restart-animation"/>
+      <next>
+        <block type="variables_set" id="(~]tAcSo(,/uZ?8N|szr">
+          <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+          <value name="VALUE">
+            <block type="math_number" id="O0c}wL,e2Q9G~,Hw*!.|">
+              <field name="NUM">0</field>
+            </block>
+          </value>
+          <next>
+            <block type="variables_set" id="r_#r:W{;O]Qq#;.}~RZi">
+              <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+              <value name="VALUE">
+                <block type="math_number" id="q7d2kGcvCM3F*e2T)VPN">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
+              <next>
+                <block type="eventHTMLElem" id="r|H@;g2;I[NxpsUjnrK`">
+                  <field name="EVENT">click</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="ID">
+                    <block type="text" id="~MibK,[a.@9i+?@+)VAf">
+                      <field name="TEXT">e003_p001</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="procedures_callnoreturn" id="YFPBJb{~?RgO/_vb.k)y">
+                      <mutation name="restart-animation"/>
+                      <next>
+                        <block type="variables_set" id="`4G,+S0*M!qcmYE5gV*N">
+                          <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                          <value name="VALUE">
+                            <block type="math_number" id="Y:?o0d`x80k`)LJztbR2">
+                              <field name="NUM">1</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="console.log" id="{T|AM}0)]a8!Z(MQ2]kQ">
+                              <value name="VALUE">
+                                <shadow type="text" id="oFFrf%q8df0dR3F6e9~,">
+                                  <field name="TEXT">proceso 1</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="eventHTMLElem" id="b*F-s-|j$M-?sFx+S10U" disabled="true">
+                      <field name="EVENT">click</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="ID">
+                        <block type="text" id=";5Yg6ysbH3BW%zOl@?5;">
+                          <field name="TEXT">e009_p002</field>
+                        </block>
+                      </value>
+                      <statement name="DO">
+                        <block type="procedures_callnoreturn" id="8oM..?JSNJ;%NmJvpPVq">
+                          <mutation name="restart-animation"/>
+                          <next>
+                            <block type="variables_set" id="J7Ob;hf2NkE}w5DEfc:F">
+                              <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                              <value name="VALUE">
+                                <block type="math_number" id="@FBokD5Y-wUd1H8O#4C#">
+                                  <field name="NUM">2</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="console.log" id="lU*xC#(E8bFfrClN=2pa">
+                                  <value name="VALUE">
+                                    <shadow type="text" id="^Ym*/44@N^|ic0M+pY+@">
+                                      <field name="TEXT">proceso 2</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="eventHTMLElem" id="!pCE[{;@C!776pNI65-N">
+                          <field name="EVENT">click</field>
+                          <field name="PARENT">TRUE</field>
+                          <value name="ID">
+                            <block type="text" id=")%!5p#AqSKbNFAFeP6RZ">
+                              <field name="TEXT">button-play</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="controls_if" id="zO!9dF2m(!7*ufvZkPy^">
+                              <mutation elseif="2"/>
+                              <value name="IF0">
+                                <block type="logic_compare" id="Cf@vHgG6Vf{we6B=tLOd">
+                                  <field name="OP">EQ</field>
+                                  <value name="A">
+                                    <block type="variables_get" id="sM.4SR+I?,3Zt7mAp!^W">
+                                      <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id="Pq#!:s@R6QbU}iQG|x#-">
+                                      <field name="NUM">0</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <statement name="DO0">
+                                <block type="console.log" id="?=e;BEW,C_Z(Ny=w24C|">
+                                  <value name="VALUE">
+                                    <shadow type="text" id="f]eRd@Xz$W(D4lK?5gx}">
+                                      <field name="TEXT">No hacer nada</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </statement>
+                              <value name="IF1">
+                                <block type="logic_compare" id="9QFr3HBn*Vke)f^q|E=L">
+                                  <field name="OP">EQ</field>
+                                  <value name="A">
+                                    <block type="variables_get" id="dJY8)@XnjGz8$iO]G/)m">
+                                      <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id="#7]Zq$G)x),*;l9N#m_#">
+                                      <field name="NUM">1</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <statement name="DO1">
+                                <block type="controls_if" id="l$!SuRkYg1dVpPNUk9+e">
+                                  <value name="IF0">
+                                    <block type="logic_compare" id="OwYDaG#;Jo/g}1!)(ns:">
+                                      <field name="OP">EQ</field>
+                                      <value name="A">
+                                        <block type="variables_get" id="}d+yHYf0`,_jI$1315s2">
+                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <block type="math_number" id="KD4HZ}8UmF{#^Z(-2iNz">
+                                          <field name="NUM">0</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <statement name="DO0">
+                                    <block type="procedures_callnoreturn" id="RTL|ASFf-l)gVMCs}=Mc">
+                                      <mutation name="pro1-paso1"/>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                              <value name="IF2">
+                                <block type="logic_compare" id="aB(I[_FyP9W5bhSXuWVU">
+                                  <field name="OP">EQ</field>
+                                  <value name="A">
+                                    <block type="variables_get" id="F.h_(rdhERvxV4LZhT|w">
+                                      <field name="VAR" id="$Bo)%{4+9@:*Ud=cP}/w">estado_proceso</field>
+                                    </block>
+                                  </value>
+                                  <value name="B">
+                                    <block type="math_number" id="IJwsaY@5E/o2:,:Pi6/]">
+                                      <field name="NUM">2</field>
+                                    </block>
+                                  </value>
+                                </block>
+                              </value>
+                              <statement name="DO2">
+                                <block type="controls_if" id="b2`xv)0w~5t3?%JySQaI">
+                                  <value name="IF0">
+                                    <block type="logic_compare" id="SRTS4uM]#/stT[ft[tVB">
+                                      <field name="OP">EQ</field>
+                                      <value name="A">
+                                        <block type="variables_get" id="IpYS=`~C$EqrwT}:%0jI">
+                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                        </block>
+                                      </value>
+                                      <value name="B">
+                                        <block type="math_number" id="YVN9?%,AJ54FHLog2nE;">
+                                          <field name="NUM">0</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <statement name="DO0">
+                                    <block type="console.log" id="ynLm(A07d5}qp|eONvFp">
+                                      <value name="VALUE">
+                                        <shadow type="text" id="~`edhh*kVYxU5r.t5LNC">
+                                          <field name="TEXT">No hacer nada</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="-1|Px!71)om`QSBCUAx=" x="34" y="274">
+      <mutation>
+        <arg name="id" varid="1@t]{Exc7li$-aMN)2n?"/>
+      </mutation>
+      <field name="NAME">show warning</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="8PzF^VO{+*.!6sL%!1Fy" x="-150" y="310">
+      <field name="NAME">pro1-paso1</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="}qY6/E*]^$`@A-3}Ghp}">
+          <value name="IF0">
+            <block type="logic_compare" id="f7{nkm!.8~KviYy-s`{l">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="x2Wn^6!?MexPp4wa8#_X">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="2d5hL!}SG=-2A0(BIu*h">
+                  <field name="NUM">0</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="show" id="(tK;g1}D%%^mwqqZZ!lk">
+              <value name="VALUE">
+                <block type="objectList" id="K#^Bod9IC`foo%[1n0Gg">
+                  <field name="FIELDNAME">llave_mixta_2</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="ru7nkWi~G^0-EEVC3G_p">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="4J^+eeu~[~GU84K@W#+X">
+                      <field name="FIELDNAME">llave_mixta_2</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setTimeout" id="|/dVJg#a5tS{iatbDCu@">
+                      <value name="VALUE">
+                        <shadow type="math_number" id="C-14_zDK_}R?;M]*l?@$">
+                          <field name="NUM">2</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO">
+                        <block type="outline" id="(,?CUzaZA[|$jE0yq5lu">
+                          <field name="DO_WHAT">DISABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="rTV;cO+v9sckfU0PwnVs">
+                              <field name="FIELDNAME">llave_mixta_2</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="playAnimationAdv" id="vXyVW-+3?s/#-).V%4n;" inline="false">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                              <field name="REVERSED">FALSE</field>
+                              <field name="LOOP">LoopOnce</field>
+                              <value name="VALUE">
+                                <block type="animationList" id="fd,6eey*Oij,f,E9gTz8">
+                                  <field name="FIELDNAME">llave_mixta_2</field>
+                                </block>
+                              </value>
+                              <value name="FROM">
+                                <block type="math_number" id="u]EXShDLGVnfjXqYNEfY">
+                                  <field name="NUM">1</field>
+                                </block>
+                              </value>
+                              <value name="TO">
+                                <block type="math_number" id=",o9^WOPm$D,{W*e|r;~!">
+                                  <field name="NUM">190</field>
+                                </block>
+                              </value>
+                              <statement name="DO">
+                                <block type="setTimeout" id="]PrBIoUjcS]EFW?~=pvK">
+                                  <value name="VALUE">
+                                    <shadow type="math_number" id=".41;tBL14_Ui0waY#e{_">
+                                      <field name="NUM">1</field>
+                                    </shadow>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="hide" id="dOc@x9JM[StE_B1R9J$Q">
+                                      <value name="VALUE">
+                                        <block type="objectList" id="B_2Z(Mfh-%J4~A+]Pfj6">
+                                          <field name="FIELDNAME">llave_mixta_2</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="playAnimationAdv" id="!F{CEb!J?-zciQNd#d::" inline="false">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                          <field name="REVERSED">FALSE</field>
+                                          <field name="LOOP">LoopOnce</field>
+                                          <value name="VALUE">
+                                            <block type="getAnimations" id="b^zXq*-,d=oWp)kd~[yM">
+                                              <value name="OBJECTINPUT">
+                                                <block type="groupList" id="feZZ:`3bji)(a+mvp;P|">
+                                                  <field name="FIELDNAME">pernos_guarda_a</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </value>
+                                          <value name="FROM">
+                                            <block type="math_number" id="wy:QIjmf`,3dO?Tm[8.c">
+                                              <field name="NUM">1</field>
+                                            </block>
+                                          </value>
+                                          <value name="TO">
+                                            <block type="math_number" id="ZnKKwig=D?]:BSJ]j$H-">
+                                              <field name="NUM">220</field>
+                                            </block>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="setTimeout" id="cZxYa_GG}8ye)aS.b6ei">
+                                              <value name="VALUE">
+                                                <shadow type="math_number" id="YP9M7:y?RzTc|jn9u[i)">
+                                                  <field name="NUM">1</field>
+                                                </shadow>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="hide" id="uEgt$.KW02$sw]Igt?W^">
+                                                  <value name="VALUE">
+                                                    <block type="groupList" id="apBDRHTH!tHfzAuED9MQ">
+                                                      <field name="FIELDNAME">pernos_guarda_a</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="playAnimationAdv" id="bLeBp2](F=2afbzWP8.8" inline="false">
+                                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                      <field name="REVERSED">FALSE</field>
+                                                      <field name="LOOP">LoopOnce</field>
+                                                      <value name="VALUE">
+                                                        <block type="animationList" id="Y0cIp}(cGu@S;nLs}fA:">
+                                                          <field name="FIELDNAME">guarda_a</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="FROM">
+                                                        <block type="math_number" id="|J*K,b:hT2j4v]0-45YA">
+                                                          <field name="NUM">1</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="TO">
+                                                        <block type="math_number" id="mkIFN~Kl0.A/tJRz6sFU">
+                                                          <field name="NUM">120</field>
+                                                        </block>
+                                                      </value>
+                                                      <statement name="DO">
+                                                        <block type="setTimeout" id="d=O;gyH=WOG{v+?D.F_A">
+                                                          <value name="VALUE">
+                                                            <shadow type="math_number" id="SS8Oc=E4IbLkT,6b{wNs">
+                                                              <field name="NUM">1</field>
+                                                            </shadow>
+                                                          </value>
+                                                          <statement name="DO">
+                                                            <block type="hide" id="I!4K|HE)JdX2Mr7sXm}n">
+                                                              <value name="VALUE">
+                                                                <block type="objectList" id="BsI6YG^Msb@p$LeVZ.g!">
+                                                                  <field name="FIELDNAME">guarda_a</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="playAnimationAdv" id="mxJ(ZxA=V]3$9+G}d.x|" inline="false">
+                                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                  <field name="REVERSED">FALSE</field>
+                                                                  <field name="LOOP">LoopOnce</field>
+                                                                  <value name="VALUE">
+                                                                    <block type="animationList" id="jIgR:F[(Ani+pmIs$me_">
+                                                                      <field name="FIELDNAME">guarda_b</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="FROM">
+                                                                    <block type="math_number" id="+u!6|oq}yJlYNd@!4bbJ">
+                                                                      <field name="NUM">1</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="TO">
+                                                                    <block type="math_number" id="9_^7aKd?WQI;FVne;W{-">
+                                                                      <field name="NUM">60</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <statement name="DO">
+                                                                    <block type="hide" id="5XAd3/A%Da9;Z#G^Nc}j">
+                                                                      <value name="VALUE">
+                                                                        <block type="objectList" id="Nus+*NB6=%@O}?.e,G)s">
+                                                                          <field name="FIELDNAME">guarda_b</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <next>
+                                                                        <block type="variables_set" id="k46tZHN{vg{qa7epF^ml">
+                                                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                          <value name="VALUE">
+                                                                            <block type="math_number" id="qJ*;DC7I1=0LktXps$V-">
+                                                                              <field name="NUM">1</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <next>
+                                                                            <block type="console.log" id="#V64(p)Ql0udfEx6vbyD">
+                                                                              <value name="VALUE">
+                                                                                <shadow type="text">
+                                                                                  <field name="TEXT">Hello, Verge!</field>
+                                                                                </shadow>
+                                                                                <block type="variables_get" id="zyDaBL(~xy{lXA#H5Fkr">
+                                                                                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                                </block>
+                                                                              </value>
+                                                                              <next>
+                                                                                <block type="procedures_callnoreturn" id="GUwxfxxqI7w/T?]*t*cK">
+                                                                                  <mutation name="pro1-paso2"/>
+                                                                                </block>
+                                                                              </next>
+                                                                            </block>
+                                                                          </next>
+                                                                        </block>
+                                                                      </next>
+                                                                    </block>
+                                                                  </statement>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </statement>
+                                                        </block>
+                                                      </statement>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="QwWl}8E]@tfx]F]Ows_h" x="2290" y="230">
+      <field name="NAME">pro1-paso3</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id=":uaa:}e`LtXz.H;l}BK_">
+          <value name="IF0">
+            <block type="logic_compare" id=";dR4#CSnG,hP)n$:/6a*">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="BT]h;MBe36#a~jp1qvj.">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="CqAsnTJ7j_Q[u?U{fqq,">
+                  <field name="NUM">2</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="playAnimationAdv" id="O@N!An;`8H2wK}:uZ:TY" inline="false">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+              <field name="REVERSED">FALSE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <block type="animationList" id="=gj_XnvBMdUPo+3Fkhuu">
+                  <field name="FIELDNAME">faja_7_arm</field>
+                </block>
+              </value>
+              <value name="FROM">
+                <block type="math_number" id="=Ni0pUdT2rG?R6brz@8s">
+                  <field name="NUM">1</field>
+                </block>
+              </value>
+              <value name="TO">
+                <block type="math_number" id="V=$SXodqN1$b$??!FSm1">
+                  <field name="NUM">180</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="setTimeout" id="{|n71B73YdI*m{q`riRo">
+                  <value name="VALUE">
+                    <shadow type="math_number" id="9yzfsVtQOT)i#{3SK/$?">
+                      <field name="NUM">1</field>
+                    </shadow>
+                  </value>
+                  <statement name="DO">
+                    <block type="hide" id="?A8cN#%EhRyt[l4Q4J8J">
+                      <value name="VALUE">
+                        <block type="objectList" id="-(O+/M5m)]=3ya[Woy3+">
+                          <field name="FIELDNAME">faja.006</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="playAnimationAdv" id="oItF8`yN;Z/O]K5G#YW-" inline="false">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                          <field name="REVERSED">FALSE</field>
+                          <field name="LOOP">LoopOnce</field>
+                          <value name="VALUE">
+                            <block type="animationList" id="Uk9;%vDU|4]f6Z+cXpzC">
+                              <field name="FIELDNAME">faja_6_arm</field>
+                            </block>
+                          </value>
+                          <value name="FROM">
+                            <block type="math_number" id="f_]fCn=PSpcbB(2KIx0c">
+                              <field name="NUM">1</field>
+                            </block>
+                          </value>
+                          <value name="TO">
+                            <block type="math_number" id="KL-lVz}^+D:$2t:5o0R!">
+                              <field name="NUM">180</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="setTimeout" id="!TTD3h94k|t`6C3W8tZQ">
+                              <value name="VALUE">
+                                <shadow type="math_number" id="-|0S^)28l6T_Rad2bDIS">
+                                  <field name="NUM">1</field>
+                                </shadow>
+                              </value>
+                              <statement name="DO">
+                                <block type="hide" id=",bzL+YDKWMV[*?0mO[mM">
+                                  <value name="VALUE">
+                                    <block type="objectList" id="Va1{[0Zh6;7A-od8M9sP">
+                                      <field name="FIELDNAME">faja.005</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="playAnimationAdv" id=".aJuZvoRh#k$$i39:cVL" inline="false">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                      <field name="REVERSED">FALSE</field>
+                                      <field name="LOOP">LoopOnce</field>
+                                      <value name="VALUE">
+                                        <block type="animationList" id="QF6{3qetBgow8J@OJ3zt">
+                                          <field name="FIELDNAME">faja_5_arm</field>
+                                        </block>
+                                      </value>
+                                      <value name="FROM">
+                                        <block type="math_number" id="p/]sSYVeWcSd9k8i#f/8">
+                                          <field name="NUM">1</field>
+                                        </block>
+                                      </value>
+                                      <value name="TO">
+                                        <block type="math_number" id="H.`qqz^X,D{{oeyD=W:$">
+                                          <field name="NUM">360</field>
+                                        </block>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="setTimeout" id="eA`bT27ow5nx-/lH5IbY">
+                                          <value name="VALUE">
+                                            <shadow type="math_number" id=",g[TCDS79L}a+DMDp#[O">
+                                              <field name="NUM">1</field>
+                                            </shadow>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="hide" id="#_r,vY+HJBfxqt8;[NxD">
+                                              <value name="VALUE">
+                                                <block type="objectList" id="48@PaGe-37`#]^@]5Cey">
+                                                  <field name="FIELDNAME">faja.004</field>
+                                                </block>
+                                              </value>
+                                              <next>
+                                                <block type="playAnimationAdv" id="4xaTey#t0I2vUy?ghIb(" inline="false">
+                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                  <field name="REVERSED">FALSE</field>
+                                                  <field name="LOOP">LoopOnce</field>
+                                                  <value name="VALUE">
+                                                    <block type="animationList" id="NAwN!pri{PZJPie$@|_]">
+                                                      <field name="FIELDNAME">faja_4_arm</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="FROM">
+                                                    <block type="math_number" id="3QJ)_@Ykr@KIWY];3UxY">
+                                                      <field name="NUM">1</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="TO">
+                                                    <block type="math_number" id="9nwfh.lEBCntpO2RD[w?">
+                                                      <field name="NUM">300</field>
+                                                    </block>
+                                                  </value>
+                                                  <statement name="DO">
+                                                    <block type="setTimeout" id="?,}s=-E5H5ekdz.Z3_B(">
+                                                      <value name="VALUE">
+                                                        <shadow type="math_number" id="MODP8Fuaut{/e$qvu`QA">
+                                                          <field name="NUM">1</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <statement name="DO">
+                                                        <block type="hide" id="]UNi7d3%K#zFprI_?Na2">
+                                                          <value name="VALUE">
+                                                            <block type="objectList" id="=Nz-5SNV+x_2K9s;BkZ1">
+                                                              <field name="FIELDNAME">faja.003</field>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="playAnimationAdv" id=";phaA/4K!xa}iu;P`D5J" inline="false">
+                                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                              <field name="REVERSED">FALSE</field>
+                                                              <field name="LOOP">LoopOnce</field>
+                                                              <value name="VALUE">
+                                                                <block type="animationList" id="+:JjVr^emOD0muo{G{kH">
+                                                                  <field name="FIELDNAME">faja_3_arm</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="FROM">
+                                                                <block type="math_number" id="wRH~*I{KWeU`($jLd2-g">
+                                                                  <field name="NUM">1</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="TO">
+                                                                <block type="math_number" id="Kbly0:U$Y#TqCuoK/TDG">
+                                                                  <field name="NUM">420</field>
+                                                                </block>
+                                                              </value>
+                                                              <statement name="DO">
+                                                                <block type="setTimeout" id="d4v6?YUv}Ky-(QfC-_1w">
+                                                                  <value name="VALUE">
+                                                                    <shadow type="math_number" id="|CLs+aT[dr9c0Gg2|Jms">
+                                                                      <field name="NUM">1</field>
+                                                                    </shadow>
+                                                                  </value>
+                                                                  <statement name="DO">
+                                                                    <block type="hide" id="4sn,YAoVEoWnYmTzl:kQ">
+                                                                      <value name="VALUE">
+                                                                        <block type="objectList" id="W$41gm8j5lxAAUw~@!*O">
+                                                                          <field name="FIELDNAME">faja.002</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <next>
+                                                                        <block type="playAnimationAdv" id="yV;(1@Tp$)#/Z{rBbkbl" inline="false">
+                                                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                          <field name="REVERSED">FALSE</field>
+                                                                          <field name="LOOP">LoopOnce</field>
+                                                                          <value name="VALUE">
+                                                                            <block type="animationList" id="TK^]Q,@])nNrbdBBJ+aH">
+                                                                              <field name="FIELDNAME">faja_2_arm</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <value name="FROM">
+                                                                            <block type="math_number" id=")i;GoaX|VzECm;,:Oz6g">
+                                                                              <field name="NUM">1</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <value name="TO">
+                                                                            <block type="math_number" id="GkuopOIWY~iG@mj|2Xvt">
+                                                                              <field name="NUM">420</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <statement name="DO">
+                                                                            <block type="setTimeout" id="|{i=y}@Io[6Q3vRMc~H%">
+                                                                              <value name="VALUE">
+                                                                                <shadow type="math_number" id="0y|L(64V95JPN?{~VVYC">
+                                                                                  <field name="NUM">1</field>
+                                                                                </shadow>
+                                                                              </value>
+                                                                              <statement name="DO">
+                                                                                <block type="hide" id="/k1ril$nEVe1k#g64d_]">
+                                                                                  <value name="VALUE">
+                                                                                    <block type="objectList" id="R`Y+s4dl/f2cU,mITl=s">
+                                                                                      <field name="FIELDNAME">faja.001</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <next>
+                                                                                    <block type="playAnimationAdv" id="lbLR*GcB%m8$d/AE*+4n" inline="false">
+                                                                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                                      <field name="REVERSED">FALSE</field>
+                                                                                      <field name="LOOP">LoopOnce</field>
+                                                                                      <value name="VALUE">
+                                                                                        <block type="animationList" id="9yq0Aub#5:eo^J-Ru/}~">
+                                                                                          <field name="FIELDNAME">faja_1_arm</field>
+                                                                                        </block>
+                                                                                      </value>
+                                                                                      <value name="FROM">
+                                                                                        <block type="math_number" id="!|:cSbVTYHox-:|ZjxJC">
+                                                                                          <field name="NUM">1</field>
+                                                                                        </block>
+                                                                                      </value>
+                                                                                      <value name="TO">
+                                                                                        <block type="math_number" id="%sho%Wmzm~lx5u2Yc{(b">
+                                                                                          <field name="NUM">540</field>
+                                                                                        </block>
+                                                                                      </value>
+                                                                                      <statement name="DO">
+                                                                                        <block type="setTimeout" id="Hp6wB0U29ygWc[Aarhk9">
+                                                                                          <value name="VALUE">
+                                                                                            <shadow type="math_number" id="UUYYO-VTYbQ*WpM4^[Hj">
+                                                                                              <field name="NUM">1</field>
+                                                                                            </shadow>
+                                                                                          </value>
+                                                                                          <statement name="DO">
+                                                                                            <block type="hide" id="+MX;*u34]T5CcNA2*LqZ">
+                                                                                              <value name="VALUE">
+                                                                                                <block type="objectList" id="tu_$~-HZr*B%,tJFoP}K">
+                                                                                                  <field name="FIELDNAME">faja</field>
+                                                                                                </block>
+                                                                                              </value>
+                                                                                              <next>
+                                                                                                <block type="variables_set" id="+2qHh#WKC9lZ}~7}c=c`">
+                                                                                                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                                                  <value name="VALUE">
+                                                                                                    <block type="math_number" id="XL=Sf`d_2RryLYi{~y38">
+                                                                                                      <field name="NUM">3</field>
+                                                                                                    </block>
+                                                                                                  </value>
+                                                                                                  <next>
+                                                                                                    <block type="console.log" id="`,:zJ1MydoMOLRe`hypq">
+                                                                                                      <value name="VALUE">
+                                                                                                        <shadow type="text">
+                                                                                                          <field name="TEXT">Hello, Verge!</field>
+                                                                                                        </shadow>
+                                                                                                        <block type="variables_get" id="ap`eo45K=]]!3cTS1ucZ">
+                                                                                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                                                        </block>
+                                                                                                      </value>
+                                                                                                      <next>
+                                                                                                        <block type="procedures_callnoreturn" id="r$*B#+@kOf-gHYqLvk83">
+                                                                                                          <mutation name="pro1-paso4"/>
+                                                                                                        </block>
+                                                                                                      </next>
+                                                                                                    </block>
+                                                                                                  </next>
+                                                                                                </block>
+                                                                                              </next>
+                                                                                            </block>
+                                                                                          </statement>
+                                                                                        </block>
+                                                                                      </statement>
+                                                                                    </block>
+                                                                                  </next>
+                                                                                </block>
+                                                                              </statement>
+                                                                            </block>
+                                                                          </statement>
+                                                                        </block>
+                                                                      </next>
+                                                                    </block>
+                                                                  </statement>
+                                                                </block>
+                                                              </statement>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </statement>
+                                                    </block>
+                                                  </statement>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </statement>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="zY5cLNYgneN}sE?$y%A4" x="1050" y="350">
+      <field name="NAME">pro1-paso2</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="AHhZeCJoHGCNojJd{Vjh">
+          <value name="IF0">
+            <block type="logic_compare" id=":]OT(_.,oT?=VHn*$Ofc">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="fL3KmL}gRs|ezm;l[}t_">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="p{f/k|dTF)nk;4D,Bb-t">
+                  <field name="NUM">1</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="show" id="HdcsfRob|YLHAQ}.LiIx">
+              <value name="VALUE">
+                <block type="objectList" id=";83+)jI(gKeKVV%k(|Q9">
+                  <field name="FIELDNAME">llave_mixta_1</field>
+                </block>
+              </value>
+              <next>
+                <block type="outline" id="l6$*f[0`J,4Igrt/UO+O">
+                  <field name="DO_WHAT">ENABLE</field>
+                  <value name="TARGET">
+                    <block type="objectList" id="]^#FOF9h+$C,v7?lE%S}">
+                      <field name="FIELDNAME">llave_mixta_1</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setTimeout" id="}H~:IGnFJm,.uhW^(EN(">
+                      <value name="VALUE">
+                        <shadow type="math_number" id="(gj#@28Ow8VU%OFb^hXW">
+                          <field name="NUM">2</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO">
+                        <block type="outline" id="9@}6SogYgaN+TKAp@Uy8">
+                          <field name="DO_WHAT">DISABLE</field>
+                          <value name="TARGET">
+                            <block type="objectList" id="f{lD,0CJKsjKhf{={?Ty">
+                              <field name="FIELDNAME">llave_mixta_1</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="playAnimationAdv" id="E59Oi^YMjCac^#bEGg9H" inline="false">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                              <field name="REVERSED">FALSE</field>
+                              <field name="LOOP">LoopOnce</field>
+                              <value name="VALUE">
+                                <block type="animationList" id="0.Vf]Dol}x4:*c-PE#@5">
+                                  <field name="FIELDNAME">llave_mixta_1</field>
+                                </block>
+                              </value>
+                              <value name="FROM">
+                                <block type="math_number" id="Sp6l})*TlXO0dn*_|d%D">
+                                  <field name="NUM">1</field>
+                                </block>
+                              </value>
+                              <value name="TO">
+                                <block type="math_number" id="(w5vBX/bKlR^e~Hyg[:S">
+                                  <field name="NUM">160</field>
+                                </block>
+                              </value>
+                              <statement name="DO">
+                                <block type="setTimeout" id="!EWtkK5rfbA/$xqS{!CU">
+                                  <value name="VALUE">
+                                    <shadow type="math_number" id="LY$E`,M4X`-aQ3yIqi[Z">
+                                      <field name="NUM">1</field>
+                                    </shadow>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="playAnimationAdv" id="0!-,cSr]kvq|kK!%-SH3" inline="false">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                      <field name="REVERSED">FALSE</field>
+                                      <field name="LOOP">LoopOnce</field>
+                                      <value name="VALUE">
+                                        <block type="getAnimations" id="`+J8J|Mzeyz;gM5v=EdI">
+                                          <value name="OBJECTINPUT">
+                                            <block type="groupList" id="nN$#==rE[bEiB|Qf!]FV">
+                                              <field name="FIELDNAME">pernos_tornillos</field>
+                                            </block>
+                                          </value>
+                                        </block>
+                                      </value>
+                                      <value name="FROM">
+                                        <block type="math_number" id="mB_vI^u?G.`#wA5$7qP;">
+                                          <field name="NUM">1</field>
+                                        </block>
+                                      </value>
+                                      <value name="TO">
+                                        <block type="math_number" id="Haz/JAsXqdbXpN*wZ@2]">
+                                          <field name="NUM">60</field>
+                                        </block>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="setTimeout" id="^Pi}2x@kY/2[Uh*?U.WA">
+                                          <value name="VALUE">
+                                            <shadow type="math_number" id="r[~-jAkdr1Xd/[4k^V$-">
+                                              <field name="NUM">1</field>
+                                            </shadow>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="playAnimationAdv" id="9-RHF]/.onL{Q90-9-F." inline="false">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                              <field name="REVERSED">FALSE</field>
+                                              <field name="LOOP">LoopOnce</field>
+                                              <value name="VALUE">
+                                                <block type="animationList" id="RN,aN6sVwNfJZ)%Dk[8{">
+                                                  <field name="FIELDNAME">llave_mixta_1</field>
+                                                </block>
+                                              </value>
+                                              <value name="FROM">
+                                                <block type="math_number" id="-U4[qSWM/)Pi5h8KtwCq">
+                                                  <field name="NUM">170</field>
+                                                </block>
+                                              </value>
+                                              <value name="TO">
+                                                <block type="math_number" id="CxdIwR$;b)mh;tcQeUS_">
+                                                  <field name="NUM">330</field>
+                                                </block>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="hide" id="+kZz#hSrrRx;v|I/vq}b">
+                                                  <value name="VALUE">
+                                                    <block type="objectList" id="Sik?2hF8.b@HqBo|N.D?">
+                                                      <field name="FIELDNAME">llave_mixta_1</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="setTimeout" id="q8kQ%fUx(p6[]S4=$5B@">
+                                                      <value name="VALUE">
+                                                        <shadow type="math_number" id="iG.OFa:Ow2CWV+N?oX.5">
+                                                          <field name="NUM">1</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <statement name="DO">
+                                                        <block type="playAnimationAdv" id="Po8HX5gkiAQA|x=mAL~f" inline="false">
+                                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                          <field name="REVERSED">FALSE</field>
+                                                          <field name="LOOP">LoopOnce</field>
+                                                          <value name="VALUE">
+                                                            <block type="getAnimations" id="i(*J@q6BHTlLDv+opvj3">
+                                                              <value name="OBJECTINPUT">
+                                                                <block type="groupList" id="xVYIDHqml|lDmgnTAF2,">
+                                                                  <field name="FIELDNAME">pernos_tornillos</field>
+                                                                </block>
+                                                              </value>
+                                                            </block>
+                                                          </value>
+                                                          <value name="FROM">
+                                                            <block type="math_number" id="NTeNJw([W^mrRUE!__rR">
+                                                              <field name="NUM">60</field>
+                                                            </block>
+                                                          </value>
+                                                          <value name="TO">
+                                                            <block type="math_number" id="0qFeuLvgZlf0t)wm.(Ab">
+                                                              <field name="NUM">120</field>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="playAnimationAdv" id=":dOz5!6JeJBrsX[k_{s@" inline="false">
+                                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                              <field name="REVERSED">FALSE</field>
+                                                              <field name="LOOP">LoopOnce</field>
+                                                              <value name="VALUE">
+                                                                <block type="animationList" id="C$EG^(kDYo.Ad?47vm5@">
+                                                                  <field name="FIELDNAME">motor</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="FROM">
+                                                                <block type="math_number" id="A6`Bps1$Jy/W||?wkVfK">
+                                                                  <field name="NUM">60</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="TO">
+                                                                <block type="math_number" id="G`iY2=)o]DeUs_kEB~.`">
+                                                                  <field name="NUM">120</field>
+                                                                </block>
+                                                              </value>
+                                                              <statement name="DO">
+                                                                <block type="variables_set" id="!h3.lWqi2.Vu7rY`HOKI">
+                                                                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                  <value name="VALUE">
+                                                                    <block type="math_number" id="5m2X)CxE!aD^H,m}xX,g">
+                                                                      <field name="NUM">2</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <next>
+                                                                    <block type="console.log" id="z{s]I-I7/APVHj),it+)">
+                                                                      <value name="VALUE">
+                                                                        <shadow type="text">
+                                                                          <field name="TEXT">Hello, Verge!</field>
+                                                                        </shadow>
+                                                                        <block type="variables_get" id="^I_d.}(0nAm:ZzW[=}IQ">
+                                                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <next>
+                                                                        <block type="procedures_callnoreturn" id="#8^([u-@{uq1cCTAL$Yz">
+                                                                          <mutation name="pro1-paso3"/>
+                                                                        </block>
+                                                                      </next>
+                                                                    </block>
+                                                                  </next>
+                                                                </block>
+                                                              </statement>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </statement>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="@o`V5;=%U6(*RaTBAydy" x="4150" y="1230">
+      <field name="NAME">pro1-paso4</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="U7{~9Rm+sM4)MP/Y2T1=">
+          <value name="IF0">
+            <block type="logic_compare" id="nc=?{t-MK?{Lu=T1a:I_">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="#[sHk_@Xocjz;t!]4kph">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="osBH,~l~g=T/$ut)3W/F">
+                  <field name="NUM">3</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="show" id="ep3`B{W|96Dm[{CQ^iu@">
+              <value name="VALUE">
+                <block type="objectList" id="ztB6v7^uf)i4xtz7Mo1V">
+                  <field name="FIELDNAME">alineador_laser_top</field>
+                </block>
+              </value>
+              <next>
+                <block type="show" id="/cQnbrreRX#=~oA2XAg8">
+                  <value name="VALUE">
+                    <block type="objectList" id="~~:R|HTG_iqOhaX.?uY8">
+                      <field name="FIELDNAME">alineador_laser_bot</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="outline" id="BS=(sVi!:=SI+0wE?ocG">
+                      <field name="DO_WHAT">ENABLE</field>
+                      <value name="TARGET">
+                        <block type="objectList" id="0ryr/pBDc8ApQ/M@:GB:">
+                          <field name="FIELDNAME">alineador_laser_top</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="setTimeout" id="tjb4gCEd-k:(03RqatSo">
+                          <value name="VALUE">
+                            <shadow type="math_number" id="FrXV!!:JPw%8mnW2xT)Z">
+                              <field name="NUM">2</field>
+                            </shadow>
+                          </value>
+                          <statement name="DO">
+                            <block type="outline" id="ln3vqTlU+wB*bzXqc?/r">
+                              <field name="DO_WHAT">DISABLE</field>
+                              <value name="TARGET">
+                                <block type="objectList" id="((}82kADhJ}~A4i=0rR@">
+                                  <field name="FIELDNAME">alineador_laser_top</field>
+                                </block>
+                              </value>
+                              <next>
+                                <block type="outline" id="|k[F{$:TXSzwd5UDE/D4">
+                                  <field name="DO_WHAT">DISABLE</field>
+                                  <value name="TARGET">
+                                    <block type="objectList" id="rxR@N`3Rr8K@ON.^9_|K">
+                                      <field name="FIELDNAME">alineador_laser_bot</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="playAnimationAdv" id="!u90s}{81Vl-|ic]C@`G" inline="false">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                      <field name="REVERSED">FALSE</field>
+                                      <field name="LOOP">LoopOnce</field>
+                                      <value name="VALUE">
+                                        <block type="animationList" id=":U`on8rWa`!Hj5B[.9[C">
+                                          <field name="FIELDNAME">alineador_laser_top</field>
+                                        </block>
+                                      </value>
+                                      <value name="FROM">
+                                        <block type="math_number" id="{qkR:h3RftKx.KE|3_%0">
+                                          <field name="NUM">1</field>
+                                        </block>
+                                      </value>
+                                      <value name="TO">
+                                        <block type="math_number" id="t#yZ_2xvF-]qJfz^gZ{{">
+                                          <field name="NUM">160</field>
+                                        </block>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="outline" id="y:Pe~99.bR]=Elan!~v/">
+                                          <field name="DO_WHAT">ENABLE</field>
+                                          <value name="TARGET">
+                                            <block type="objectList" id="`I28ZVB?C7a))*qGz.2z">
+                                              <field name="FIELDNAME">alineador_laser_bot</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="setTimeout" id="#;UiGqa:I4b$HZPI%8`8">
+                                              <value name="VALUE">
+                                                <shadow type="math_number" id=".$z9Htbjq*/}FDX~G7)x">
+                                                  <field name="NUM">2</field>
+                                                </shadow>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="outline" id="Ug5)JDWS?SrxNC@QtU^9">
+                                                  <field name="DO_WHAT">DISABLE</field>
+                                                  <value name="TARGET">
+                                                    <block type="objectList" id="gdvlk-1#E^S*cO[)HkO{">
+                                                      <field name="FIELDNAME">alineador_laser_bot</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="playAnimationAdv" id=".(^rZODV.^P[9[-ojSmw" inline="false">
+                                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                      <field name="REVERSED">FALSE</field>
+                                                      <field name="LOOP">LoopOnce</field>
+                                                      <value name="VALUE">
+                                                        <block type="animationList" id="5xz@hLWv{2N3V.cvYwH[">
+                                                          <field name="FIELDNAME">alineador_laser_bot</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="FROM">
+                                                        <block type="math_number" id="y,nOWSIRD@L$WGb2J40!">
+                                                          <field name="NUM">1</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="TO">
+                                                        <block type="math_number" id="Q6-cn2:{^?5;zK*#J^)}">
+                                                          <field name="NUM">160</field>
+                                                        </block>
+                                                      </value>
+                                                      <statement name="DO">
+                                                        <block type="setTimeout" id="215xP?SOhDs^T5-[VS*/">
+                                                          <value name="VALUE">
+                                                            <shadow type="math_number" id="=Yw4WsGv1B^jh%lTqqX2">
+                                                              <field name="NUM">3</field>
+                                                            </shadow>
+                                                          </value>
+                                                          <statement name="DO">
+                                                            <block type="playAnimationAdv" id="[n~K88?p,/yfvyR|QVN[" inline="false">
+                                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                              <field name="REVERSED">TRUE</field>
+                                                              <field name="LOOP">LoopOnce</field>
+                                                              <value name="VALUE">
+                                                                <block type="animationList" id="R#MejF[`k%!#3%nTG/CG">
+                                                                  <field name="FIELDNAME">alineador_laser_top</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="FROM">
+                                                                <block type="math_number" id="Y`8d+pn.YTvqhP27cojr">
+                                                                  <field name="NUM">1</field>
+                                                                </block>
+                                                              </value>
+                                                              <value name="TO">
+                                                                <block type="math_number" id="MI^LC}vh8TGOZ^J}/hmW">
+                                                                  <field name="NUM">160</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="playAnimationAdv" id="?=/{{x36ADF@7V!;aLe#" inline="false">
+                                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                  <field name="REVERSED">TRUE</field>
+                                                                  <field name="LOOP">LoopOnce</field>
+                                                                  <value name="VALUE">
+                                                                    <block type="animationList" id="m$EtJ=dB.2_czWf9@w)-">
+                                                                      <field name="FIELDNAME">alineador_laser_bot</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="FROM">
+                                                                    <block type="math_number" id="^T](6i2q^,u|h)$Vq.y?">
+                                                                      <field name="NUM">1</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <value name="TO">
+                                                                    <block type="math_number" id=".sR%m!rx66O1o~N9(=L0">
+                                                                      <field name="NUM">160</field>
+                                                                    </block>
+                                                                  </value>
+                                                                  <statement name="DO">
+                                                                    <block type="hide" id="Q[Ud-TFA3.Qs$v0WjiA?">
+                                                                      <value name="VALUE">
+                                                                        <block type="objectList" id="kTJZjAg,ri437|-30|iB">
+                                                                          <field name="FIELDNAME">alineador_laser_top</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <next>
+                                                                        <block type="hide" id="3.alYBK#za.tHd[BY*`}">
+                                                                          <value name="VALUE">
+                                                                            <block type="objectList" id="N]nJ_NlUZ1yAIUb2S*Mc">
+                                                                              <field name="FIELDNAME">alineador_laser_bot</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <next>
+                                                                            <block type="variables_set" id="cnuWOU9Z^/Q1tcQMsQ,!">
+                                                                              <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                              <value name="VALUE">
+                                                                                <block type="math_number" id="PPvCZ46-PYh=YXLRDL%a">
+                                                                                  <field name="NUM">4</field>
+                                                                                </block>
+                                                                              </value>
+                                                                              <next>
+                                                                                <block type="console.log" id="@RUs(3g*7j,nuiPrc-#A">
+                                                                                  <value name="VALUE">
+                                                                                    <shadow type="text">
+                                                                                      <field name="TEXT">Hello, Verge!</field>
+                                                                                    </shadow>
+                                                                                    <block type="variables_get" id="8!^@^1yoI~d1oA6dWYl#">
+                                                                                      <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <next>
+                                                                                    <block type="setTimeout" id="#R5Or79xT.D]hNE%9Ssx">
+                                                                                      <value name="VALUE">
+                                                                                        <shadow type="math_number" id="9r8{3Ie`Ge@@ad#:?/L?">
+                                                                                          <field name="NUM">2</field>
+                                                                                        </shadow>
+                                                                                      </value>
+                                                                                      <statement name="DO">
+                                                                                        <block type="procedures_callnoreturn" id="SUCv$7EnuE#Q?|/ClyPF">
+                                                                                          <mutation name="pro1-paso5"/>
+                                                                                        </block>
+                                                                                      </statement>
+                                                                                    </block>
+                                                                                  </next>
+                                                                                </block>
+                                                                              </next>
+                                                                            </block>
+                                                                          </next>
+                                                                        </block>
+                                                                      </next>
+                                                                    </block>
+                                                                  </statement>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </statement>
+                                                        </block>
+                                                      </statement>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id=";u]--MiFi|ucb|F(f84f" x="1050" y="1930">
+      <field name="NAME">pro1-paso6</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="qZ:gi@j~-c=%ZQ;l4Ae.">
+          <value name="IF0">
+            <block type="logic_compare" id="dD48Bfy(6vb`gP=(^kxB">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="G_fK(eG5$iJwcs6a=av6">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="PMFAp/Yn#9bLmni_E?{5">
+                  <field name="NUM">5</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="playAnimationAdv" id="Bb5Wt~](bpj1!~oPVZ@N" inline="false">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+              <field name="REVERSED">TRUE</field>
+              <field name="LOOP">LoopOnce</field>
+              <value name="VALUE">
+                <block type="getAnimations" id="an%`pui%1c~kG^!yzg37">
+                  <value name="OBJECTINPUT">
+                    <block type="groupList" id="dU5.{Et8P`gqn2IqpM3p">
+                      <field name="FIELDNAME">pernos_tornillos</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <value name="FROM">
+                <block type="math_number" id="p_GPAQq}b+KM%r/AXeLZ">
+                  <field name="NUM">60</field>
+                </block>
+              </value>
+              <value name="TO">
+                <block type="math_number" id="F!u`8HHT}(!_L!X;5[VZ">
+                  <field name="NUM">120</field>
+                </block>
+              </value>
+              <next>
+                <block type="playAnimationAdv" id="3vhcp=+8bq*?0KO-c8V," inline="false">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                  <field name="REVERSED">TRUE</field>
+                  <field name="LOOP">LoopOnce</field>
+                  <value name="VALUE">
+                    <block type="animationList" id="SGpE7$Fna^h@orcnG.~/">
+                      <field name="FIELDNAME">motor</field>
+                    </block>
+                  </value>
+                  <value name="FROM">
+                    <block type="math_number" id=",mBT.+?tYhgWGevfK7N]">
+                      <field name="NUM">60</field>
+                    </block>
+                  </value>
+                  <value name="TO">
+                    <block type="math_number" id="S2E*`Sm(JMai`4a,o8~C">
+                      <field name="NUM">120</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="show" id="ooMCc-n@8:-o`Gi_)/Nr">
+                      <value name="VALUE">
+                        <block type="objectList" id="Zeir1rF+oH`~4R4W-,bj">
+                          <field name="FIELDNAME">llave_mixta_1</field>
+                        </block>
+                      </value>
+                      <next>
+                        <block type="playAnimationAdv" id="cH.;nyGbY3=RwJdhfRcu" inline="false">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                          <field name="REVERSED">TRUE</field>
+                          <field name="LOOP">LoopOnce</field>
+                          <value name="VALUE">
+                            <block type="animationList" id="HBD,Ms/1V:k#J/MaO:?$">
+                              <field name="FIELDNAME">llave_mixta_1</field>
+                            </block>
+                          </value>
+                          <value name="FROM">
+                            <block type="math_number" id="Y*D@A@,P]c@KY,JM)r}1">
+                              <field name="NUM">170</field>
+                            </block>
+                          </value>
+                          <value name="TO">
+                            <block type="math_number" id="wGLYC3?pert:kQ?Av1l]">
+                              <field name="NUM">330</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="setTimeout" id="N(pO}d_zhslmiajazE9[">
+                              <value name="VALUE">
+                                <shadow type="math_number" id="aoru7aLr?)7}5eRU4hL2">
+                                  <field name="NUM">1</field>
+                                </shadow>
+                              </value>
+                              <statement name="DO">
+                                <block type="playAnimationAdv" id="^l4rNv`T?w%oGGX~dBB)" inline="false">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                  <field name="REVERSED">TRUE</field>
+                                  <field name="LOOP">LoopOnce</field>
+                                  <value name="VALUE">
+                                    <block type="getAnimations" id="%E_2V)[`*]m2F0Iz@4*u">
+                                      <value name="OBJECTINPUT">
+                                        <block type="groupList" id="ARjGSNYR_]vGXkDEHUf$">
+                                          <field name="FIELDNAME">pernos_tornillos</field>
+                                        </block>
+                                      </value>
+                                    </block>
+                                  </value>
+                                  <value name="FROM">
+                                    <block type="math_number" id="bM::nOEFb*Ffv$Pf7h@=">
+                                      <field name="NUM">1</field>
+                                    </block>
+                                  </value>
+                                  <value name="TO">
+                                    <block type="math_number" id="JjI6K{diWf5:HEZ2YqcP">
+                                      <field name="NUM">60</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="setTimeout" id="u0:7*@Ab_2iV1U;=q/c9">
+                                      <value name="VALUE">
+                                        <shadow type="math_number" id="]ia%P=Ot_*Sd;-e04Or0">
+                                          <field name="NUM">2</field>
+                                        </shadow>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="show" id="^#TU;TX(hFgz^(p5F%3}">
+                                          <value name="VALUE">
+                                            <block type="objectList" id="0j!SVHA9{P0qy3o@-Nc#">
+                                              <field name="FIELDNAME">llave_mixta_1</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="playAnimationAdv" id="c+kUel:Iv{@TOXt#{J]x" inline="false">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                              <field name="REVERSED">TRUE</field>
+                                              <field name="LOOP">LoopOnce</field>
+                                              <value name="VALUE">
+                                                <block type="animationList" id="WN)ojJP:t7dYXQ8eQc1A">
+                                                  <field name="FIELDNAME">llave_mixta_1</field>
+                                                </block>
+                                              </value>
+                                              <value name="FROM">
+                                                <block type="math_number" id="sT-bgsW40l^5DY58z1t~">
+                                                  <field name="NUM">1</field>
+                                                </block>
+                                              </value>
+                                              <value name="TO">
+                                                <block type="math_number" id="-Qw?Ok7]WL/R*#(t6UE/">
+                                                  <field name="NUM">160</field>
+                                                </block>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="hide" id="9buI]7m~^v%$.IKuR|oB">
+                                                  <value name="VALUE">
+                                                    <block type="objectList" id="C@G|5ZK%v?^#OZJ`MbGb">
+                                                      <field name="FIELDNAME">llave_mixta_1</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="variables_set" id="hL-zz!4tpNO-;?#xo=mt">
+                                                      <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                      <value name="VALUE">
+                                                        <block type="math_number" id="FyND{:FN89q[FZ3`EZr9">
+                                                          <field name="NUM">6</field>
+                                                        </block>
+                                                      </value>
+                                                      <next>
+                                                        <block type="console.log" id="|J-j(:`nz6Hx]*=lIc4F">
+                                                          <value name="VALUE">
+                                                            <shadow type="text">
+                                                              <field name="TEXT">Hello, Verge!</field>
+                                                            </shadow>
+                                                            <block type="variables_get" id="@oV%.j#|9FIudy{Hcr|D">
+                                                              <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="procedures_callnoreturn" id="awX@oL-h1Zz2eWcOo5+/">
+                                                              <mutation name="pro1-paso7"/>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                            </block>
+                          </statement>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="7^n3gM^mB;8DG+589jBT" x="-250" y="2070">
+      <field name="NAME">pro1-paso7</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="*_CX!1y{n04Mwe9|4i(J">
+          <value name="IF0">
+            <block type="logic_compare" id="!c4]IZ?l0P@2F3|][_mj">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id=",`Y},cBzEMdC+7~*Ij0(">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="+{V:a{[BE2-O@mZ$`rxG">
+                  <field name="NUM">6</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="show" id="28)nzD{Juxd-A*8POJ$,">
+              <value name="VALUE">
+                <block type="objectList" id=":6Wn#S$m_|s!$N31zkCe">
+                  <field name="FIELDNAME">guarda_b</field>
+                </block>
+              </value>
+              <next>
+                <block type="playAnimationAdv" id="VV+v:2F_MS9LPw-L7Gp5" inline="false">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                  <field name="REVERSED">TRUE</field>
+                  <field name="LOOP">LoopOnce</field>
+                  <value name="VALUE">
+                    <block type="animationList" id="hVvtbW03TR{uaiD[/|5K">
+                      <field name="FIELDNAME">guarda_b</field>
+                    </block>
+                  </value>
+                  <value name="FROM">
+                    <block type="math_number" id="O_!)IDGPBfn^$[FFh*Dw">
+                      <field name="NUM">1</field>
+                    </block>
+                  </value>
+                  <value name="TO">
+                    <block type="math_number" id=":u-pjpW(YI8(:Jx$]{e%">
+                      <field name="NUM">60</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="setTimeout" id="hdm.%;nbg})nFSDGUzH{">
+                      <value name="VALUE">
+                        <shadow type="math_number" id="2!bbf_`GobpWYh|LZTOD">
+                          <field name="NUM">1</field>
+                        </shadow>
+                      </value>
+                      <statement name="DO">
+                        <block type="show" id="r-PfKW_RfH9um)nLRUs]">
+                          <value name="VALUE">
+                            <block type="objectList" id="F#bV-~J:NNZ[1YfD|h]2">
+                              <field name="FIELDNAME">guarda_a</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="playAnimationAdv" id="4iwFbfX[ZxTHm95`V3=u" inline="false">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                              <field name="REVERSED">TRUE</field>
+                              <field name="LOOP">LoopOnce</field>
+                              <value name="VALUE">
+                                <block type="animationList" id="VKeL_S*^cBmv;PdptuAM">
+                                  <field name="FIELDNAME">guarda_a</field>
+                                </block>
+                              </value>
+                              <value name="FROM">
+                                <block type="math_number" id=",fs^W~;%R?VbN2OGv:}_">
+                                  <field name="NUM">1</field>
+                                </block>
+                              </value>
+                              <value name="TO">
+                                <block type="math_number" id="vRIkg^?c5yJID_Es(?,i">
+                                  <field name="NUM">120</field>
+                                </block>
+                              </value>
+                              <statement name="DO">
+                                <block type="setTimeout" id="!LuqgYsrh%KW?LkC`ZN7">
+                                  <value name="VALUE">
+                                    <shadow type="math_number" id="KQd$BncnwM6kXI@PJ{?_">
+                                      <field name="NUM">1</field>
+                                    </shadow>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="show" id="6f4RM.rB^OKYN+ajpL$E">
+                                      <value name="VALUE">
+                                        <block type="groupList" id="ROnD4[eus`)2=SGJlo|?">
+                                          <field name="FIELDNAME">pernos_guarda_a</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="playAnimationAdv" id="p}AB|]S]io|ic.P0EJi;" inline="false">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                          <field name="REVERSED">TRUE</field>
+                                          <field name="LOOP">LoopOnce</field>
+                                          <value name="VALUE">
+                                            <block type="getAnimations" id="#IE@EFW0bxhTz$rtL}1w">
+                                              <value name="OBJECTINPUT">
+                                                <block type="groupList" id="$^#3~110;Tym[b`ctSuE">
+                                                  <field name="FIELDNAME">pernos_guarda_a</field>
+                                                </block>
+                                              </value>
+                                            </block>
+                                          </value>
+                                          <value name="FROM">
+                                            <block type="math_number" id="%=)em6yx+5||#T^nT~fi">
+                                              <field name="NUM">1</field>
+                                            </block>
+                                          </value>
+                                          <value name="TO">
+                                            <block type="math_number" id="XK-^rVE^o{)xk%IGqOg?">
+                                              <field name="NUM">220</field>
+                                            </block>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="setTimeout" id="PzO(XhMhDQ4jmc/V$Xz^">
+                                              <value name="VALUE">
+                                                <shadow type="math_number" id="RhOrRMiX/Ja67@yEGY!@">
+                                                  <field name="NUM">1</field>
+                                                </shadow>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="show" id="iRK3:AvJrS/5S;n|=Czn">
+                                                  <value name="VALUE">
+                                                    <block type="objectList" id="hFf0#SXmWT$;0%+PHAW3">
+                                                      <field name="FIELDNAME">llave_mixta_2</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="playAnimationAdv" id="IM|-x)qxbQ6xL6!7Rxg[" inline="false">
+                                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                      <field name="REVERSED">TRUE</field>
+                                                      <field name="LOOP">LoopOnce</field>
+                                                      <value name="VALUE">
+                                                        <block type="animationList" id="xKEXWPhsXS.xT6};cAX]">
+                                                          <field name="FIELDNAME">llave_mixta_2</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="FROM">
+                                                        <block type="math_number" id="ZT|7BQ.01qqy9]gAseLw">
+                                                          <field name="NUM">1</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="TO">
+                                                        <block type="math_number" id="5p*]*%;88Rpgzp?[{ul6">
+                                                          <field name="NUM">190</field>
+                                                        </block>
+                                                      </value>
+                                                      <statement name="DO">
+                                                        <block type="hide" id="zwFCv@q=@zW.H4ZB9%Ce">
+                                                          <value name="VALUE">
+                                                            <block type="objectList" id="TD:zOJ/G*M(jbupjS67B">
+                                                              <field name="FIELDNAME">llave_mixta_2</field>
+                                                            </block>
+                                                          </value>
+                                                          <next>
+                                                            <block type="variables_set" id="{(+bItWF)/j7#J`mELdl">
+                                                              <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                              <value name="VALUE">
+                                                                <block type="math_number" id="=^e5YCOFKz?i3Llu9XEL">
+                                                                  <field name="NUM">0</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="console.log" id="k+ANJ;pylk[[u6du*S+j">
+                                                                  <value name="VALUE">
+                                                                    <shadow type="text">
+                                                                      <field name="TEXT">Hello, Verge!</field>
+                                                                    </shadow>
+                                                                    <block type="variables_get" id="yo.fi5_ln;HIM(YrZCdD">
+                                                                      <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                    </block>
+                                                                  </value>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </statement>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="/dl2]0yL8~1l554YULw4" x="2270" y="2370">
+      <field name="NAME">pro1-paso5</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="hvfKb~3,iA}OlyT/T|vu">
+          <value name="IF0">
+            <block type="logic_compare" id="rKbL{]fHz4(*g@K,ODJd">
+              <field name="OP">EQ</field>
+              <value name="A">
+                <block type="variables_get" id="$Z[A;lRNW)H!jg{:B[Ml">
+                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                </block>
+              </value>
+              <value name="B">
+                <block type="math_number" id="CsbV?`6a.{6wg:}fVpce">
+                  <field name="NUM">4</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="show" id="v+tA8~9aI+hi9RgOYGxg">
+              <value name="VALUE">
+                <block type="objectList" id="|R/{lPc$jaw4;.{t.vQ8">
+                  <field name="FIELDNAME">faja</field>
+                </block>
+              </value>
+              <next>
+                <block type="setTimeout" id=")NRwAQ9,f6Gy?:qoOwpc">
+                  <value name="VALUE">
+                    <shadow type="math_number" id="zQ~t!_GW`n-h{W{xqx4r">
+                      <field name="NUM">1</field>
+                    </shadow>
+                  </value>
+                  <statement name="DO">
+                    <block type="playAnimationAdv" id="T3HhpP||wo}VtG!^R|ty" inline="false">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                      <field name="REVERSED">TRUE</field>
+                      <field name="LOOP">LoopOnce</field>
+                      <value name="VALUE">
+                        <block type="animationList" id="aSQ9g)_uh#2$#}$Y)]r@">
+                          <field name="FIELDNAME">faja_1_arm</field>
+                        </block>
+                      </value>
+                      <value name="FROM">
+                        <block type="math_number" id="gGe^.sKl4M24G;$h2)rE">
+                          <field name="NUM">1</field>
+                        </block>
+                      </value>
+                      <value name="TO">
+                        <block type="math_number" id="=[rFf#PHoru9a,+hDK{Y">
+                          <field name="NUM">540</field>
+                        </block>
+                      </value>
+                      <statement name="DO">
+                        <block type="show" id="_LHq~5[k}Dv-82@MgN`6">
+                          <value name="VALUE">
+                            <block type="objectList" id="SCYxdzLM]QX3Fk/`7TKX">
+                              <field name="FIELDNAME">faja.001</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="setTimeout" id="?S%K=g]T3/jj-V3KZ2hR">
+                              <value name="VALUE">
+                                <shadow type="math_number" id="Nze;}Ossa{2gdW^Bz8Hq">
+                                  <field name="NUM">1</field>
+                                </shadow>
+                              </value>
+                              <statement name="DO">
+                                <block type="playAnimationAdv" id="{%lZz$]Tay%fRU-(hez?" inline="false">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                  <field name="REVERSED">TRUE</field>
+                                  <field name="LOOP">LoopOnce</field>
+                                  <value name="VALUE">
+                                    <block type="animationList" id="RvkZ1$nKNF[eo^?X()pW">
+                                      <field name="FIELDNAME">faja_2_arm</field>
+                                    </block>
+                                  </value>
+                                  <value name="FROM">
+                                    <block type="math_number" id="c@xH$jFDv%61@}9U(~Gq">
+                                      <field name="NUM">1</field>
+                                    </block>
+                                  </value>
+                                  <value name="TO">
+                                    <block type="math_number" id="VYXp5{$(sPf/(/@Mh$BH">
+                                      <field name="NUM">420</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="show" id="/yUobmINU;.!9_ZW;fqy">
+                                      <value name="VALUE">
+                                        <block type="objectList" id=";O_gGEuvoh4vuQ2.bkg#">
+                                          <field name="FIELDNAME">faja.002</field>
+                                        </block>
+                                      </value>
+                                      <next>
+                                        <block type="setTimeout" id="=UdIG_xP~Mab=:f2N$vT">
+                                          <value name="VALUE">
+                                            <shadow type="math_number" id="SNo(SNH:hhX:7G=[{Mz_">
+                                              <field name="NUM">1</field>
+                                            </shadow>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="playAnimationAdv" id="$FIewjJVz74$/_hcEiz:" inline="false">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                              <field name="REVERSED">TRUE</field>
+                                              <field name="LOOP">LoopOnce</field>
+                                              <value name="VALUE">
+                                                <block type="animationList" id="L3+BV-/;ht{o[#kZBrLr">
+                                                  <field name="FIELDNAME">faja_3_arm</field>
+                                                </block>
+                                              </value>
+                                              <value name="FROM">
+                                                <block type="math_number" id="i:SyVL,pP`VKgl%3n|HO">
+                                                  <field name="NUM">1</field>
+                                                </block>
+                                              </value>
+                                              <value name="TO">
+                                                <block type="math_number" id="L`]QD9+ewC+og1TFm+VF">
+                                                  <field name="NUM">420</field>
+                                                </block>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="show" id="sHp(~_,%zF_0rqc)[B^f">
+                                                  <value name="VALUE">
+                                                    <block type="objectList" id="KmIlD,/Pg,WKM9_B9`/0">
+                                                      <field name="FIELDNAME">faja.003</field>
+                                                    </block>
+                                                  </value>
+                                                  <next>
+                                                    <block type="setTimeout" id="4%^tpf[K144-%C8}Bj]|">
+                                                      <value name="VALUE">
+                                                        <shadow type="math_number" id="_uE8T=NR?kWHFz!zP4r=">
+                                                          <field name="NUM">1</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <statement name="DO">
+                                                        <block type="playAnimationAdv" id="Kq,%JI|m_D-Jdmsixv;B" inline="false">
+                                                          <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                          <field name="REVERSED">TRUE</field>
+                                                          <field name="LOOP">LoopOnce</field>
+                                                          <value name="VALUE">
+                                                            <block type="animationList" id="$X6[@ddaok8dyuO$d@|~">
+                                                              <field name="FIELDNAME">faja_4_arm</field>
+                                                            </block>
+                                                          </value>
+                                                          <value name="FROM">
+                                                            <block type="math_number" id="J!+PP9`iFAHAXr8z4nRu">
+                                                              <field name="NUM">1</field>
+                                                            </block>
+                                                          </value>
+                                                          <value name="TO">
+                                                            <block type="math_number" id="E=KL!*m]!4#}hV%6fDV$">
+                                                              <field name="NUM">300</field>
+                                                            </block>
+                                                          </value>
+                                                          <statement name="DO">
+                                                            <block type="show" id="HpynKe4o#QJbSHss(yrx">
+                                                              <value name="VALUE">
+                                                                <block type="objectList" id="yl/hhcrXa$]it.@4d-}S">
+                                                                  <field name="FIELDNAME">faja.004</field>
+                                                                </block>
+                                                              </value>
+                                                              <next>
+                                                                <block type="setTimeout" id="tAz9/vFV([!mi$!3jnIC">
+                                                                  <value name="VALUE">
+                                                                    <shadow type="math_number" id="6ju8zeQIM%[X@CvOzTvo">
+                                                                      <field name="NUM">1</field>
+                                                                    </shadow>
+                                                                  </value>
+                                                                  <statement name="DO">
+                                                                    <block type="playAnimationAdv" id="J/9!}++[bssbr@^0[^Wo" inline="false">
+                                                                      <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                      <field name="REVERSED">TRUE</field>
+                                                                      <field name="LOOP">LoopOnce</field>
+                                                                      <value name="VALUE">
+                                                                        <block type="animationList" id="mlaHXYABkpx^LDAU`Qq$">
+                                                                          <field name="FIELDNAME">faja_5_arm</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <value name="FROM">
+                                                                        <block type="math_number" id=")1Iok/V?)Y`]107EIa[}">
+                                                                          <field name="NUM">1</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <value name="TO">
+                                                                        <block type="math_number" id="fR;.-.-52I%S_@4R~}zI">
+                                                                          <field name="NUM">360</field>
+                                                                        </block>
+                                                                      </value>
+                                                                      <statement name="DO">
+                                                                        <block type="show" id="#D+9:Kk`*f4@OIGa%TkR">
+                                                                          <value name="VALUE">
+                                                                            <block type="objectList" id="HlWoxD5cFp56)a?*vO%U">
+                                                                              <field name="FIELDNAME">faja.005</field>
+                                                                            </block>
+                                                                          </value>
+                                                                          <next>
+                                                                            <block type="setTimeout" id=")^,N9oK7Pe.5|t7B_SHO">
+                                                                              <value name="VALUE">
+                                                                                <shadow type="math_number" id="Wg;%aq{OV{^TSh`.8sna">
+                                                                                  <field name="NUM">1</field>
+                                                                                </shadow>
+                                                                              </value>
+                                                                              <statement name="DO">
+                                                                                <block type="playAnimationAdv" id="q(xZXTMe!lA/eD`BGl:L" inline="false">
+                                                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                                  <field name="REVERSED">TRUE</field>
+                                                                                  <field name="LOOP">LoopOnce</field>
+                                                                                  <value name="VALUE">
+                                                                                    <block type="animationList" id="Q%zqekcNoyM1ZYd+oyjm">
+                                                                                      <field name="FIELDNAME">faja_6_arm</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <value name="FROM">
+                                                                                    <block type="math_number" id="3k=q#OFU3IeZ,X/sVcyI">
+                                                                                      <field name="NUM">1</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <value name="TO">
+                                                                                    <block type="math_number" id="A+2po,llQ}5iBk%(;ltv">
+                                                                                      <field name="NUM">180</field>
+                                                                                    </block>
+                                                                                  </value>
+                                                                                  <statement name="DO">
+                                                                                    <block type="show" id="~qs9dI%_+.3/FlZ0%pt~">
+                                                                                      <value name="VALUE">
+                                                                                        <block type="objectList" id="QCuxnM~Fb/u5r##)@Y8r">
+                                                                                          <field name="FIELDNAME">faja.006</field>
+                                                                                        </block>
+                                                                                      </value>
+                                                                                      <next>
+                                                                                        <block type="setTimeout" id="DN+@cFY5S;:3.NJd8fb7">
+                                                                                          <value name="VALUE">
+                                                                                            <shadow type="math_number" id="f-NnC5)7)k*PM3v=3!6F">
+                                                                                              <field name="NUM">1</field>
+                                                                                            </shadow>
+                                                                                          </value>
+                                                                                          <statement name="DO">
+                                                                                            <block type="playAnimationAdv" id="tEu$h#zY8kK-]:PDJF0S" inline="false">
+                                                                                              <mutation xmlns="http://www.w3.org/1999/xhtml" advplaybackoptions="true" enablewhenfinished="true"></mutation>
+                                                                                              <field name="REVERSED">TRUE</field>
+                                                                                              <field name="LOOP">LoopOnce</field>
+                                                                                              <value name="VALUE">
+                                                                                                <block type="animationList" id="cRuyG`D[Dhqd1Ypci(%o">
+                                                                                                  <field name="FIELDNAME">faja_7_arm</field>
+                                                                                                </block>
+                                                                                              </value>
+                                                                                              <value name="FROM">
+                                                                                                <block type="math_number" id="8w6-3=%gisaDW{]y]R;9">
+                                                                                                  <field name="NUM">1</field>
+                                                                                                </block>
+                                                                                              </value>
+                                                                                              <value name="TO">
+                                                                                                <block type="math_number" id=":W4r)Ii93Ib}+0K`B%@L">
+                                                                                                  <field name="NUM">180</field>
+                                                                                                </block>
+                                                                                              </value>
+                                                                                              <statement name="DO">
+                                                                                                <block type="variables_set" id="Bh6:s,/wH{kgaxu;h*F[">
+                                                                                                  <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                                                  <value name="VALUE">
+                                                                                                    <block type="math_number" id="8+`-^4lGSU?UNY-/}uw`">
+                                                                                                      <field name="NUM">5</field>
+                                                                                                    </block>
+                                                                                                  </value>
+                                                                                                  <next>
+                                                                                                    <block type="console.log" id="K@Y^lF:4gC|0U`GwHJ~y">
+                                                                                                      <value name="VALUE">
+                                                                                                        <shadow type="text">
+                                                                                                          <field name="TEXT">Hello, Verge!</field>
+                                                                                                        </shadow>
+                                                                                                        <block type="variables_get" id="OE1ui%Ck]L6zQ!d()cec">
+                                                                                                          <field name="VAR" id="6ppu,H{1t,s)Kqwrn$vf">animation_counter</field>
+                                                                                                        </block>
+                                                                                                      </value>
+                                                                                                      <next>
+                                                                                                        <block type="procedures_callnoreturn" id="64=:Z(0U:]SIB*7~;2yT">
+                                                                                                          <mutation name="pro1-paso6"/>
+                                                                                                        </block>
+                                                                                                      </next>
+                                                                                                    </block>
+                                                                                                  </next>
+                                                                                                </block>
+                                                                                              </statement>
+                                                                                            </block>
+                                                                                          </statement>
+                                                                                        </block>
+                                                                                      </next>
+                                                                                    </block>
+                                                                                  </statement>
+                                                                                </block>
+                                                                              </statement>
+                                                                            </block>
+                                                                          </next>
+                                                                        </block>
+                                                                      </statement>
+                                                                    </block>
+                                                                  </statement>
+                                                                </block>
+                                                              </next>
+                                                            </block>
+                                                          </statement>
+                                                        </block>
+                                                      </statement>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                            </block>
+                                          </statement>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="751.1999999999999" viewport-y="28" viewport-w="512.8" viewport-h="394" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>
